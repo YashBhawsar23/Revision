@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Basic from "./Basic";
 
 const App = () => {
   return (
     <>
-      <Basic />
+      <h1>Yash</h1>
     </>
   );
 };
