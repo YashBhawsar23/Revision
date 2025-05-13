@@ -1,21 +1,18 @@
-import React, { useState } from "react";
-import Basic from "./Basic";
-import ChildD from "./ChildD";
-import { createContext } from "react";
-
-const data = createContext();
+import React, { useContext } from "react";
+import { AuthContext } from "./context/AuthContext";
+import Header from "./components/Header";
+import Dashboard from "./components/Dashboard";
+import Login from "./components/Login";
 
 const App = () => {
-  const name = "Yash";
+  const { user } = useContext(AuthContext);
+
   return (
     <>
-      <h1>Context API</h1>
-      <data.Provider value={name}>
-        <ChildD />
-      </data.Provider>
+      <Header />
+      <main>{user ? <Dashboard /> : <Login />}</main>
     </>
   );
 };
 
 export default App;
-export { data };
