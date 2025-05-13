@@ -1,25 +1,25 @@
-import React, { useContext, useState } from "react";
-import { AuthContext } from "../context/AuthContext";
+import React, { useState } from "react";
 
 const Login = () => {
-  const [username, setUsername] = useState("");
-  const { login } = useContext(AuthContext);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   const handleLogin = () => {
-    if (username.trim()) {
-      login(username);
-    }
+    setLoggedIn((prev) => !prev);
   };
 
   return (
     <>
-      <h2>Login</h2>
-      <input
-        placeholder="Enter name"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <button onClick={handleLogin}>Login</button>
+      {loggedIn ? (
+        <>
+          <h2>Welcome, Yash</h2>
+          <button onClick={handleLogin}>Log Out</button>
+        </>
+      ) : (
+        <>
+          <h2>Please Log In</h2>
+          <button onClick={handleLogin}>Log In</button>
+        </>
+      )}
     </>
   );
 };
