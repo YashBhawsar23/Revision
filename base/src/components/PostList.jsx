@@ -1,7 +1,15 @@
-import React from "react";
-
-const PostList = () => {
-  return <div>PostList</div>;
-};
+function PostList({ posts, onDelete, onEdit }) {
+  return (
+    <ul>
+      {posts.map((post) => (
+        <li key={post.id}>
+          {post.title}
+          <button onClick={() => onEdit(post)}>✏️ Edit</button>
+          <button onClick={() => onDelete(post.id)}>🗑 Delete</button>
+        </li>
+      ))}
+    </ul>
+  );
+}
 
 export default PostList;
