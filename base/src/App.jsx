@@ -5,7 +5,7 @@ const App = () => {
   return (
     <>
       <h1>Redux Toolkit</h1>
-      {/* <Pixelated /> */}
+      <Pixelated />
     </>
   );
 };
