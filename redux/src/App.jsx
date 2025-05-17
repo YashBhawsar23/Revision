@@ -1,11 +1,13 @@
 import React from "react";
 import Counter from "./features/counter/Counter";
+import UsersList from "./features/users/UsersList";
 
 const App = () => {
   return (
     <>
       <h1>Redux Toolkit</h1>
-      <Counter />
+      {/* <Counter /> */}
+      <UsersList />
     </>
   );
 };
